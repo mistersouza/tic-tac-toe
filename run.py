@@ -21,7 +21,7 @@ def draw_board():
 
 
 
-def get_next_move():
+def get_user_next_move():
     '''
     Prompt the user to input their next move for the Tic Tac Toe game.
     Returns:
@@ -76,7 +76,6 @@ def get_bot_next_move():
         if board[row][col] not in ['X', 'O']:
             # Return the bot's valid move
             return (bot_next_move, 'O')
-
 
 
 
