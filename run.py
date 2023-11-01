@@ -23,3 +23,16 @@ def validate_move(move):
     return True
 
 
+def get_next_move():
+    while True:
+        try: 
+            next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
+            if validate_move(next_move):
+                return next_move
+        except ValueError:
+            print("Oops, that's not a valid move. Try again, champ!")    
+
+def update_board(board, move, mark):
+    row, col = divmod(move - 1, 3)
+    board[row][col] = mark
+
