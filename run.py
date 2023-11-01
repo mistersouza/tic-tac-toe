@@ -1,25 +1,47 @@
 import random
 
-print('Hey there, welcome to my Tic Tac Toe showdown')
+print("Hey there, welcome to my Tic Tac Toe showdown")
 
-moves = list(range(1, 10))
-board = [list(range(1, 4)), list(range(4, 7)), list(range(7, 10))]
+board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
 def draw_board():
-    '''
-    The `draw_board` function iterates through the Tic Tac Toe board, 
-    printing a visual representation by adding borders and values from the `board` list.
-    '''
-    # Loop through each row of the board (3 rows in total)
-    for row in range(3):
-        # Print the top border of the row
-        print('\n+---+---+---+')
-        # Print the content of the row
-        print('|', end = '')
-        for col in range(3):
-            # Print the value from the board for the current position
-            print('', board[row][col], end = ' |')
-     # Print the bottom border of the row
-    print('\n+---+---+---+')
+    for row in board:
+        print('+---+---+---+')
+        print('|', end=' ')
+        print(' | '.join(row), end=' ')
+        print('|')
+    print('+---+---+---+')
 
+def validate_move(move):
+    if move < 1 or move > 9:
+        print(f"{move}'s out of range, champ. Pick a number from 1 to 9.")
+        return False
+    row, col = divmod(move - 1, 3)
+    if board[row][col] in ['X', 'O']:
+        print("Oops, that spot's taken, buddy!")
+        return False
+    return True
+
+def get_next_move():
+    while True:
+        try: 
+            next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
+            if validate_move(next_move):
+                return next_move
+        except ValueError:
+            print("Oops, that's not a valid move. Try again, champ!")    
+
+def update_board(board, move, mark):
+    row, col = divmod(move - 1, 3)
+    board[row][col] = mark
+
+# Draw the initial board
+draw_board()
+
+# Example: Make a move with 'X' at the chosen position
+move = get_next_move()
+
+update_board(board, move, 'X')
+
+# Update and display the board
 draw_board()
