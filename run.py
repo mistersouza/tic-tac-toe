@@ -1,7 +1,5 @@
 import random
 
-
-
 board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
 def draw_board():
@@ -97,6 +95,35 @@ def update_board(board, move, mark):
     # Updates the board with the player's mark.
     board[row][col] = mark
 
+def get_winner(board):
+    '''
+    Get the champ of the Tic Tac Toe showdown by scanning all the possible ways you can win - whether it's three in a row, column, or even diagonally.
+    
+    Inputs:
+        - board` (list of lists): The current board.
+    Outcome:
+        - `str` or `None`: The crowned symbol ('X' or 'O') or no one takes the throne if it's a draw.
+    '''
+    # See if anyone aced a row,
+    for row in board:
+        if row[0] == row[1] == row[2] and row[0] != ' ':
+            return row[0]
+
+    # nailed a column, 
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] and board[0][col] != ' ':
+            return board[0][col]
+
+    # or slayed it diagonally to become the champ
+    if board[0][0] == board[1][1] == board[2][2] and board[0][0] != ' ':
+        return board[0][0]
+
+    if board[0][2] == board[1][1] == board[2][0] and board[0][2] != ' ':
+        return board[0][2]
+        
+    # If there ain't no champ to be found...
+    return None  
+
 
 print("Hey there, welcome to my Tic Tac Toe showdown")
 
@@ -106,12 +133,21 @@ draw_board()
 round = 1
 while round < 10: 
     # Get user to input next move
-    (move, mark) = get_next_move() if round % 2 != 0 else get_bot_next_move()
+    (move, mark) = get_user_next_move() if round % 2 != 0 else get_bot_next_move()
 
     # Update board
     update_board(board, move, mark)
+
+    if round > 4:
+        winner = get_winner(board)
+        
+        if winner:
+            print(f"The winner is {winner}!")
+            break
 
     # Display the board
     draw_board()
 
     round += 1 
+if round > 9: 
+    print("It's a draw!")
