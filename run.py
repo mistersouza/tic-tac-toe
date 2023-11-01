@@ -18,7 +18,6 @@ def draw_board():
     print('+---+---+---+')
 
 
-
 def get_user_next_move():
     '''
     Prompt the user to input their next move for the Tic Tac Toe game.
@@ -58,13 +57,14 @@ def validate_move(move):
         return False
     return True
 
+
 def get_bot_next_move():
     '''
     Generates random moves for the bot within the range of 1 to 9. It ensures
     that the chosen position on the board is not already occupied by 'X' or 'O'.
 
     Returns:
-    - Tuple[int, str]: The bot's valid move represented as (move, 'O').
+        - Tuple[int, str]: The bot's valid move represented as (move, 'O').
     '''
     while True:
         bot_next_move = random.randint(1, 9)
@@ -76,24 +76,24 @@ def get_bot_next_move():
             return (bot_next_move, 'O')
 
 
-
 def update_board(board, move, mark):
     '''
-    Update the Tic Tac Toe game board with a player's move
+    Drop your mark on the Tic Tac game board
 
-    Parameters:
-    - board (list): The current game board.
-    - move (int): The move chosen by the player (1 to 9).
-    - mark (str): The player's symbol ('X' or 'O') to be placed on the board.
+    Inputs:
+        - board (list): The current game board.
+        - move (int): Your epic move (1 to 9).
+        - mark (str): Your battle insignia ('X' or 'O').
 
-    Returns:
-    - None. The function updates the board in-place.
+    Outcome:
+        - None. No need to wait for confirmation; the board is updated right away.
     '''
 
-    # Calculates the corresponding row and
+    # Figure out where your mark lands and then BAM!
     row, col = divmod(move - 1, 3)
-    # Updates the board with the player's mark.
+    #  The board's got your mark
     board[row][col] = mark
+
 
 def get_winner(board):
     '''
@@ -142,6 +142,7 @@ while round < 10:
         winner = get_winner(board)
         
         if winner:
+            draw_board()
             print(f"The winner is {winner}!")
             break
 
