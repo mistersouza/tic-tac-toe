@@ -32,6 +32,7 @@ def get_next_move():
         except ValueError:
             print("Oops, that's not a valid move. Try again, champ!")    
 
+
 def update_board(board, move, mark):
     row, col = divmod(move - 1, 3)
     board[row][col] = mark
