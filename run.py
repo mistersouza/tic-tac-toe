@@ -102,6 +102,16 @@ def get_winner(board):
     # If there ain't no champ to be found...
     return None  
 
+def play_again():
+    while True:
+        choice = input("Do you want to play again? (yes/no): ").strip().lower()
+        if choice in ["yes", "y"]:
+            return True
+        elif choice in ["no", "n"]:
+            return False
+        else:
+            print("Please enter 'yes' or 'no'.")
+
 
 def play_again():
     while True:
