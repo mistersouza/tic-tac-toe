@@ -166,6 +166,9 @@ def clear_screen():
         os.system('cls')  
 
 def how_to():
+    '''
+    Step by stpe on how to become a Tic Tac Toe legend:"
+    '''
     print('Welcome to the ultimate Tic Tac Toe showdown!')
     print()
     print('Picture this: you\'re about to step onto a 3x3 battlefield, just like the one below.')
@@ -189,7 +192,6 @@ def how_to():
     print("The first to conquer three 'X's in a row, column, or diagonal becomes the champion.")
     print("If all cells are claimed, and no one clinches victory, it's a draw.")
 
-
     print('You can\'t place your "X" where your opponent has already marked an "O,"')
     print('and you can\'t pick a number outside of 1 to 9.')
     print('\n')
@@ -199,33 +201,36 @@ def how_to():
     print('\n')
 
     print('The first player to get three "X"s in a row, column, or diagonal wins.')
-    print('If all the cells are filled, and no one wins, it\'s a draw.')    
-
+    print('If all the cells are filled, and no one wins, it\'s a draw.')
+    print()
 
 def main():
-
     how_to()
-        
+    input('Hit "Enter" to start, champs!')
+    clear_screen()
     while True:
         # Create an initial empty board
         board = [[' ' for _ in range(3)] for _ in range(3)]
-
+        clear_screen()
+        draw_board(board) 
         round = 1
-        draw_board(board)
         while round < 10: 
             if round % 2 != 0:
                 board = get_user_next_move(board)
             else:
                 board = get_bot_next_move(board)
 
+            clear_screen()
+            draw_board(board)
+
             if round > 4:
                 winner = get_winner(board)
                 if winner:
+                    clear_screen()
                     draw_board(board, get_winner_moves(board))
                     print(f'The winner is {winner}!')
                     break
 
-            draw_board(board)
             round += 1
 
         if round > 9: 
@@ -235,4 +240,6 @@ def main():
             print("Thanks for playing! Goodbye.")
             break
 
-main()
+
+if __name__ == '__main__':
+    main()
