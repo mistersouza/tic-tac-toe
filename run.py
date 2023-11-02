@@ -42,17 +42,18 @@ def get_user_next_move(board):
 
 def get_bot_next_move():
     '''
-    Time for the bot to make some moves! It's going random, but smart. 
-    The bot picks a number from 1 to 9, but it won't step on your 'X' or 'O' territory.
+    The bot's turn to shine with a random, clever move. 
+    It avoids crossing your 'X' or 'O' territory.
     '''
     while True:
         bot_next_move = random.randint(1, 9)
         # Calculate the row and column indices based on the random move
         row, col = divmod(bot_next_move - 1, 3)
-        # Check if the board position is not 'X' or 'O' (i.e., unoccupied)
+        # Make sure the spot isn't already occupied by 'X' or 'O'
         if board[row][col] not in ['X', 'O']:
-            # Return the bot's valid move
-            return (bot_next_move, 'O')
+            move, mark = (bot_next_move, 'O')
+            board = update_board(board, move, mark)
+            return board
 
 
 def validate_move(move, board):
