@@ -1,4 +1,5 @@
 import random
+import os
 from colorama import Fore, Style
 
 winning_combinations = [
@@ -128,15 +129,18 @@ def get_winner(board):
 
 
 def get_winner_moves(board):
-    winning_moves = []  # Initialize an empty list to store winning moves
+     # Initialize an empty list to store winning moves
+    winning_moves = []
 
     for combination in winning_combinations:
         if all(board[row][col] == 'X' for row, col in combination):
-            winning_moves.extend(combination)  # Add winning moves to the list
+            # Add winning moves to the list
+            winning_moves.extend(combination)  
         elif all(board[row][col] == 'O' for row, col in combination):
-            winning_moves.extend(combination)  # Add winning moves to the list
-
-    return winning_moves  # Return the list of winning moves
+            # Add winning moves to the list
+            winning_moves.extend(combination)  
+    # Return the list of winning moves
+    return winning_moves  
 
 
 def play_again():
@@ -149,6 +153,17 @@ def play_again():
         else:
             print('C\'mon, you gotta type "yes" or "no". Give it another shot!')
 
+
+def clear_screen():
+    '''
+    Wiping the slate clean! Let's clear the terminal screen for a fresh start.
+    '''
+    # If on Unix/Linux/MacOS system
+    if os.name == 'posix':  
+        os.system('clear')
+    else:
+        # On Windows
+        os.system('cls')  
 
 def how_to():
     print('Welcome to the ultimate Tic Tac Toe showdown!')
@@ -191,11 +206,9 @@ def main():
 
     how_to()
         
-    while False:
+    while True:
         # Create an initial empty board
         board = [[' ' for _ in range(3)] for _ in range(3)]
-
-
 
         round = 1
         draw_board(board)
