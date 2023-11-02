@@ -150,32 +150,76 @@ def play_again():
             print('C\'mon, you gotta type "yes" or "no". Give it another shot!')
 
 
-def main():
-    print("Hey there, welcome to my Tic Tac Toe showdown")
-    
-    board = [[' ' for _ in range(3)] for _ in range(3)]
-
+def how_to():
+    print('Welcome to the ultimate Tic Tac Toe showdown!')
+    print()
+    print('Picture this: you\'re about to step onto a 3x3 battlefield, just like the one below.')
+    print('Each cell is tagged with a number from 1 to 9.')
+    print()
     draw_board()
+    print()
 
-    round = 1
-    while round < 10: 
-        if round % 2 != 0:
-            board = get_user_next_move(board)
-        else:
-            board = get_bot_next_move(board)
+    print("Guess what? You're the 'X' player, and your mission is simple:")
+    print("get three 'X's in a row, column, or diagonal.")
+    print("To make your move, just type the number of the cell where you want to drop your 'X'.")
+    print()
 
-        if round > 4:
-            winner = get_winner(board)
-            if winner:
-                
-                draw_board(board, get_winner_moves(board))
-                print(f'The winner is {winner}!')
-                break
+    print("But there's a twist – no crossing into 'O' territory, and no numbers outside of 1 to 9 allowed!")
+    print()
 
+    print("Meet your rival, the 'O' bot. It's got a few tricks up its sleeve, making random yet cunning moves.")
+    print("Don't underestimate it; this bot knows how to play the game.")
+    print()
+
+    print("The first to conquer three 'X's in a row, column, or diagonal becomes the champion.")
+    print("If all cells are claimed, and no one clinches victory, it's a draw.")
+
+
+    print('You can\'t place your "X" where your opponent has already marked an "O,"')
+    print('and you can\'t pick a number outside of 1 to 9.')
+    print('\n')
+
+    print('Your opponent, the bot, is the "O" player. It\'ll make its moves randomly,')
+    print('but don\'t be fooled; it\'s a smart bot and won\'t step on your "X" territory.')
+    print('\n')
+
+    print('The first player to get three "X"s in a row, column, or diagonal wins.')
+    print('If all the cells are filled, and no one wins, it\'s a draw.')    
+
+
+def main():
+
+    how_to()
+        
+    while False:
+        # Create an initial empty board
+        board = [[' ' for _ in range(3)] for _ in range(3)]
+
+
+
+        round = 1
         draw_board(board)
-        round += 1
+        while round < 10: 
+            if round % 2 != 0:
+                board = get_user_next_move(board)
+            else:
+                board = get_bot_next_move(board)
 
-    if round > 9: 
-        print("It's a draw!")
+            if round > 4:
+                winner = get_winner(board)
+                if winner:
+                    draw_board(board, get_winner_moves(board))
+                    print(f'The winner is {winner}!')
+                    break
+
+            draw_board(board)
+            round += 1
+
+        if round > 9: 
+            print("It's a draw!")
+
+        if not play_again():
+            print("Thanks for playing! Goodbye.")
+            break
 
 main()
