@@ -1,17 +1,33 @@
 import random
 from colorama import Fore, Style
 
-def draw_board(board=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-):
+winning_combinations = [
+    [(0, 0), (0, 1), (0, 2)],  # Top row
+    [(1, 0), (1, 1), (1, 2)],  # Middle row
+    [(2, 0), (2, 1), (2, 2)],  # Bottom row
+    [(0, 0), (1, 0), (2, 0)],  # Left column
+    [(0, 1), (1, 1), (2, 1)],  # Middle column
+    [(0, 2), (1, 2), (2, 2)],  # Right column
+    [(0, 0), (1, 1), (2, 2)],  # Diagonal from top-left to bottom-right
+    [(0, 2), (1, 1), (2, 0)]   # Diagonal from top-right to bottom-left
+]
+
+def draw_board(board=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']], winning_moves=None):
     '''
     Show off the Tic Tac Toe board in all its glory, complete with borders and battle marks.
     '''
     # Loop through each row of the game board
-    for row in board:
+    for row_index, row in enumerate(board):
         print('+---+---+---+')
         # Print the content of the row, joining values with ' | '
         print('|', end=' ')
-        print(' | '.join(row), end=' ')
+        for col_index, cell in enumerate(row):
+            if (winning_moves is not None) and ((row_index, col_index) in winning_moves):
+                print(f"{Fore.GREEN}{cell}{Style.RESET_ALL}", end=' ')
+            else:
+                print(cell, end=' ')
+            if col_index < 2:
+                print('|', end=' ')
         # End the row with a border and a new line
         print('|')
     # Print the bottom border of the board to complete the visual representation
@@ -40,7 +56,7 @@ def get_user_next_move(board):
             print(f"{Fore.RED}Oops, that's not a valid move. Try again, champ!{Style.RESET_ALL}")
 
 
-def get_bot_next_move():
+def get_bot_next_move(board):
     '''
     The bot's turn to shine with a random, clever move. 
     It avoids crossing your 'X' or 'O' territory.
@@ -110,6 +126,19 @@ def get_winner(board):
     # If there ain't no champ to be found...
     return None  
 
+
+def get_winner_moves(board):
+    winning_moves = []  # Initialize an empty list to store winning moves
+
+    for combination in winning_combinations:
+        if all(board[row][col] == 'X' for row, col in combination):
+            winning_moves.extend(combination)  # Add winning moves to the list
+        elif all(board[row][col] == 'O' for row, col in combination):
+            winning_moves.extend(combination)  # Add winning moves to the list
+
+    return winning_moves  # Return the list of winning moves
+
+
 def play_again():
     while True:
         choice = input('Ready for another round? Want to play again? (yes/no): ').strip().lower()
@@ -123,8 +152,9 @@ def play_again():
 
 def main():
     print("Hey there, welcome to my Tic Tac Toe showdown")
-
+    
     board = [[' ' for _ in range(3)] for _ in range(3)]
+
     draw_board()
 
     round = 1
@@ -137,8 +167,9 @@ def main():
         if round > 4:
             winner = get_winner(board)
             if winner:
-                draw_board(board)
-                print(f"The winner is {winner}!")
+                
+                draw_board(board, get_winner_moves(board))
+                print(f'The winner is {winner}!')
                 break
 
         draw_board(board)
