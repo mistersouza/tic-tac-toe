@@ -1,10 +1,11 @@
 import random
+from colorama import Fore, Style
 
 board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
 def draw_board():
     '''
-    Output the Tic Tac Toe board with borders and values
+    Show off the Tic Tac Toe board in all its glory, complete with borders and battle marks.
     '''
     # Loop through each row of the game board
     for row in board:
@@ -21,8 +22,6 @@ def draw_board():
 def get_user_next_move():
     '''
     Prompt the user to input their next move for the Tic Tac Toe game.
-    Returns:
-    - int. User's valid move (an integer between 1 and 9).
     '''
     # Prompt user for input until a valid move is provided.
     while True:
@@ -32,39 +31,30 @@ def get_user_next_move():
                 return (next_move, 'X')
         # It handles non-numeric input
         except ValueError:
-            print("Oops, that's not a valid move. Try again, champ!")
+            print(f"{Fore.RED}Oops, that's not a valid move. Try again, champ!{Style.RESET_ALL}")
 
 
 def validate_move(move):
     '''
-    Validate a user's move for the Tic Tac Toe game.
-
-    Parameters:
-    - move (int). The user's move to be validated.
-
-    Returns:
-    - bool. True if the move is valid, False if it's not.
+    Make sure that move of yours is the real deal for this Tic Tac Toe showdown.    
     '''
     if move < 1 or move > 9:
         # Print out-of-range moves
-        print(f"{move}'s out of range, champ. Pick a number from 1 to 9.")
+        print(f'{move}\'s out of range, champ. Pick a number from 1 to 9.')
         return False
     row, col = divmod(move - 1, 3)
     # Checks if position is not already tanken
     if board[row][col] in ['X', 'O']:
         # Print error message
-        print("Oops, that spot's taken, buddy!")
+        print(f"{Fore.RED}Oops, that spot's taken, buddy!{Style.RESET_ALL}")
         return False
     return True
 
 
 def get_bot_next_move():
     '''
-    Generates random moves for the bot within the range of 1 to 9. It ensures
-    that the chosen position on the board is not already occupied by 'X' or 'O'.
-
-    Returns:
-        - Tuple[int, str]: The bot's valid move represented as (move, 'O').
+    Time for the bot to make some moves! It's going random, but smart. 
+    The bot picks a number from 1 to 9, but it won't step on your 'X' or 'O' territory.
     '''
     while True:
         bot_next_move = random.randint(1, 9)
@@ -79,14 +69,6 @@ def get_bot_next_move():
 def update_board(board, move, mark):
     '''
     Drop your mark on the Tic Tac game board
-
-    Inputs:
-        - board (list): The current game board.
-        - move (int): Your epic move (1 to 9).
-        - mark (str): Your battle insignia ('X' or 'O').
-
-    Outcome:
-        - None. No need to wait for confirmation; the board is updated right away.
     '''
 
     # Figure out where your mark lands and then BAM!
@@ -97,12 +79,8 @@ def update_board(board, move, mark):
 
 def get_winner(board):
     '''
-    Get the champ of the Tic Tac Toe showdown by scanning all the possible ways you can win - whether it's three in a row, column, or even diagonally.
-    
-    Inputs:
-        - board` (list of lists): The current board.
-    Outcome:
-        - `str` or `None`: The crowned symbol ('X' or 'O') or no one takes the throne if it's a draw.
+    Get the champ of the Tic Tac Toe showdown by scanning all the possible ways you can win - 
+    whether it's three in a row, column, or even diagonally.
     '''
     # See if anyone aced a row,
     for row in board:
