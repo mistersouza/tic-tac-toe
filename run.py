@@ -1,9 +1,8 @@
 import random
 from colorama import Fore, Style
 
-board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-
-def draw_board():
+def draw_board(board=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
+):
     '''
     Show off the Tic Tac Toe board in all its glory, complete with borders and battle marks.
     '''
@@ -19,36 +18,26 @@ def draw_board():
     print('+---+---+---+')
 
 
-def get_user_next_move():
+def get_user_next_move(board):
     '''
-    Prompt the user to input their next move for the Tic Tac Toe game.
+    Get user to input next move by typing a number from 1 to 9. 
+    It's not going to let you move to a spot that's already been claimed.
     '''
-    # Prompt user for input until a valid move is provided.
+
+    ## Time to play, superstar! We're in an endless loop until you make a killer move.
     while True:
         try: 
-            user_next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
-            if validate_move(user_next_move):
-                return (user_next_move, 'X')
-        # It handles non-numeric input
+            # Get your move by entering a number from 1 to 9. We'll check if it's the real deal.
+            next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
+            if validate_move(next_move, board):
+                # If your move checks out, it's showtime. Your 'X' is dropping right here!
+                move, mark = (next_move, 'X')
+                board = update_board(board, move, mark)
+                # Handing you back the updated board.
+                return board
         except ValueError:
+            # Oops! If you stumble with non-numeric input, we'll tell you off in red.
             print(f"{Fore.RED}Oops, that's not a valid move. Try again, champ!{Style.RESET_ALL}")
-
-
-def validate_move(move):
-    '''
-    Make sure that move of yours is the real deal for this Tic Tac Toe showdown.    
-    '''
-    if move < 1 or move > 9:
-        # Print out-of-range moves
-        print(f'{move}\'s out of range, champ. Pick a number from 1 to 9.')
-        return False
-    row, col = divmod(move - 1, 3)
-    # Checks if position is not already tanken
-    if board[row][col] in ['X', 'O']:
-        # Print error message
-        print(f"{Fore.RED}Oops, that spot's taken, buddy!{Style.RESET_ALL}")
-        return False
-    return True
 
 
 def get_bot_next_move():
@@ -66,6 +55,23 @@ def get_bot_next_move():
             return (bot_next_move, 'O')
 
 
+def validate_move(move, board):
+    '''
+    Make sure that move of yours is the real deal for this Tic Tac Toe showdown.    
+    '''
+    if move < 1 or move > 9:
+        # Print out-of-range moves
+        print(f'{move}\'s out of range, champ. Pick a number from 1 to 9.')
+        return False
+    row, col = divmod(move - 1, 3)
+    # Checks if position is not already tanken
+    if board[row][col] in ['X', 'O']:
+        # Print error message
+        print(f"{Fore.RED}Oops, that spot's taken, buddy!{Style.RESET_ALL}")
+        return False
+    return True
+
+
 def update_board(board, move, mark):
     '''
     Drop your mark on the Tic Tac game board
@@ -75,6 +81,7 @@ def update_board(board, move, mark):
     row, col = divmod(move - 1, 3)
     #  The board's got your mark
     board[row][col] = mark
+    return board
 
 
 def get_winner(board):
@@ -104,52 +111,39 @@ def get_winner(board):
 
 def play_again():
     while True:
-        choice = input("Do you want to play again? (yes/no): ").strip().lower()
+        choice = input('Ready for another round? Want to play again? (yes/no): ').strip().lower()
         if choice in ["yes", "y"]:
             return True
         elif choice in ["no", "n"]:
             return False
         else:
-            print("Please enter 'yes' or 'no'.")
+            print('C\'mon, you gotta type "yes" or "no". Give it another shot!')
 
 
-def play_again():
-    while True:
-        choice = input('Do you wanna play again? (yes/no)').strip().lower()
-        if choice in ['yes', 'y']:
-            return True
-        elif choice in ['no', 'n']:
-            return False
-        else:
-            print('Please type "yes" or "no".')
+def main():
+    print("Hey there, welcome to my Tic Tac Toe showdown")
 
-
-
-print("Hey there, welcome to my Tic Tac Toe showdown")
-
-# Draw the initial board
-draw_board()
-
-round = 1
-while round < 10: 
-    # Get user to input next move
-    (move, mark) = get_user_next_move() if round % 2 != 0 else get_bot_next_move()
-
-    # Update board
-    update_board(board, move, mark)
-
-    if round > 4:
-        winner = get_winner(board)
-        
-        if winner:
-            draw_board()
-            print(f"The winner is {winner}!")
-            break
-
-    # Display the board
+    board = [[' ' for _ in range(3)] for _ in range(3)]
     draw_board()
-    round += 1 
 
-if round > 9:
-    print("It's a draw!")
+    round = 1
+    while round < 10: 
+        if round % 2 != 0:
+            board = get_user_next_move(board)
+        else:
+            board = get_bot_next_move(board)
 
+        if round > 4:
+            winner = get_winner(board)
+            if winner:
+                draw_board(board)
+                print(f"The winner is {winner}!")
+                break
+
+        draw_board(board)
+        round += 1
+
+    if round > 9: 
+        print("It's a draw!")
+
+main()
