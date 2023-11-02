@@ -26,9 +26,9 @@ def get_user_next_move():
     # Prompt user for input until a valid move is provided.
     while True:
         try: 
-            next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
-            if validate_move(next_move):
-                return (next_move, 'X')
+            user_next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
+            if validate_move(user_next_move):
+                return (user_next_move, 'X')
         # It handles non-numeric input
         except ValueError:
             print(f"{Fore.RED}Oops, that's not a valid move. Try again, champ!{Style.RESET_ALL}")
@@ -103,6 +103,18 @@ def get_winner(board):
     return None  
 
 
+def play_again():
+    while True:
+        choice = input('Do you wanna play again? (yes/no)').strip().lower()
+        if choice in ['yes', 'y']:
+            return True
+        elif choice in ['no', 'n']:
+            return False
+        else:
+            print('Please type "yes" or "no".')
+
+
+
 print("Hey there, welcome to my Tic Tac Toe showdown")
 
 # Draw the initial board
@@ -126,7 +138,8 @@ while round < 10:
 
     # Display the board
     draw_board()
-
     round += 1 
-if round > 9: 
+
+if round > 9:
     print("It's a draw!")
+
