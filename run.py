@@ -1,6 +1,5 @@
 import random
 import os
-from colorama import Fore, Style
 
 winning_combinations = [
     [(0, 0), (0, 1), (0, 2)],  # Top row
@@ -13,6 +12,10 @@ winning_combinations = [
     [(0, 2), (1, 1), (2, 0)]   # Diagonal from top-right to bottom-left
 ]
 
+ANSI_RED = '\u001b[31m'
+ANSI_GREEN = '\u001b[32m'
+ANSI_RESET = '\u001b[0m'
+
 def draw_board(board=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']], winning_moves=None):
     '''
     Show off the Tic Tac Toe board in all its glory, complete with borders and battle marks.
@@ -24,7 +27,7 @@ def draw_board(board=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']], winnin
         print('|', end=' ')
         for col_index, cell in enumerate(row):
             if (winning_moves is not None) and ((row_index, col_index) in winning_moves):
-                print(f"{Fore.GREEN}{cell}{Style.RESET_ALL}", end=' ')
+                print(ANSI_GREEN + cell + ANSI_RESET, end=' ')
             else:
                 print(cell, end=' ')
             if col_index < 2:
@@ -79,13 +82,13 @@ def validate_move(move, board):
     '''
     if move < 1 or move > 9:
         # Print out-of-range moves
-        print(f'{move}\'s out of range, champ. Pick a number from 1 to 9.')
+        print(ANSI_RED + f'{move}\'s out of range, champ. Pick a number from 1 to 9.' + ANSI_RESET)
         return False
     row, col = divmod(move - 1, 3)
     # Checks if position is not already tanken
     if board[row][col] in ['X', 'O']:
         # Print error message
-        print(f"{Fore.RED}Oops, that spot's taken, buddy!{Style.RESET_ALL}")
+        print(ANSI_RED + f"Oops, that spot's taken, buddy!" + ANSI_RESET)
         return False
     return True
 
@@ -212,7 +215,7 @@ def main():
         # Create an initial empty board
         board = [[' ' for _ in range(3)] for _ in range(3)]
         clear_screen()
-        draw_board(board) 
+        draw_board() 
         round = 1
         while round < 10: 
             if round % 2 != 0:
