@@ -79,7 +79,6 @@ Now you're ready to enjoy a game of Tic Tac Toe! Take turns, plan your moves, an
 __Custom layout__ Say hello to our wicked terminal setup and rad background image. It's like we're giving your game an exclusive VIP lounge
 ![Tic Tac Toe layout](images/readme/tic-tac-toe_layout.png)
 
-
 __Interactive Guide__ New to the game? No worries! We've got an interactive guide that'll teach you how to play like a pro, right on your custom background.
 ![Tic Tac Toe how to play](images/readme/tic-tac-toe_how-to-play.png)
 
@@ -93,3 +92,7 @@ __Tie or Draw__ If no one conquers the grid, we'll call it a draw. Tic-Tac-Toe d
 
 __Play Again__ Feel like another round? You can restart the epic showdown with a single keystroke, all on your sleek custom terminal.
 ![Tic Tac Tow play again](images/readme/tic-tac-toe_play-again.png)
+
+### Future features
+    - **Multiplayer Mode**: Challenge your friends and see who's the ultimate champion.
+    - **AI Bot Opponent**: Test your skills against our cunning AI bot.
