@@ -94,5 +94,11 @@ __Play Again__ Feel like another round? You can restart the epic showdown with a
 ![Tic Tac Tow play again](images/readme/tic-tac-toe_play-again.png)
 
 ### Future features
-    - **Multiplayer Mode**: Challenge your friends and see who's the ultimate champion.
-    - **AI Bot Opponent**: Test your skills against our cunning AI bot.
+    __Multiplayer Mode__ Challenge your friends and see who's the ultimate champion.
+    __AI Bot Opponent__ Test your skills against our cunning AI bot.
+
+## Data Model
+
+The selected data model for our Tic Tac Toe game, a two-dimensional list representing the 3x3 game board, is the most suitable choice. This model perfectly mirrors the game's structure and simplifies game logic. It aligns seamlessly with the game's rules, enabling intuitive player interactions and streamlined win checks.
+
+This data model's simplicity and efficiency offer excellent flexibility for potential future features like larger grids, additional players, or alternative win conditions, making it the ideal choice to keep the game adaptable and entertaining while staying true to the classic Tic Tac Toe experience.
