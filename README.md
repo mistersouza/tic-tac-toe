@@ -94,11 +94,19 @@ __Play Again__ Feel like another round? You can restart the epic showdown with a
 ![Tic Tac Tow play again](images/readme/tic-tac-toe_play-again.png)
 
 ### Future features
-    __Multiplayer Mode__ Challenge your friends and see who's the ultimate champion.
-    __AI Bot Opponent__ Test your skills against our cunning AI bot.
+__Multiplayer Mode__ Challenge your friends and see who's the ultimate champion.
+__AI Bot Opponent__ Test your skills against our cunning AI bot.
 
 ## Data Model
 
 The selected data model for our Tic Tac Toe game, a two-dimensional list representing the 3x3 game board, is the most suitable choice. This model perfectly mirrors the game's structure and simplifies game logic. It aligns seamlessly with the game's rules, enabling intuitive player interactions and streamlined win checks.
 
 This data model's simplicity and efficiency offer excellent flexibility for potential future features like larger grids, additional players, or alternative win conditions, making it the ideal choice to keep the game adaptable and entertaining while staying true to the classic Tic Tac Toe experience.
+
+## Testing
+
+I've given this project a solid manual run-through, just to make sure everything's smooth and snappy. I also ran it through a PEP* inter, and it's all clear on that front—no problems to see here.
+
+I threw some curveballs too, like tossing in strings when it expected numbers and venturing into out-of-bounds territory. The game handled it like a champ.
+
+To top it off, I gave it a spin on my trusty local terminal and even unleashed it in the wilds of the Code Institute Heroku terminal. It's all good, no hiccups.
