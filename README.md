@@ -156,4 +156,24 @@ This project was brought to life using Code Institute's mock terminal for Heroku
     - Now, link your Heroku app to the repo where the action's happening.
     - Finally, just tap that 'Deploy' button like a champ! 💥
 
-[Watch your game come to life on Heroku](https://ci-tic-tac-toe-a4813875d9de.herokuapp.com/)
+Watch your game come to life on [Heroku](https://ci-tic-tac-toe-a4813875d9de.herokuapp.com/)
+
+## Tech 🛠️
+
+### Languages
+
+_Web trinity +
+
++ Python
++ HTML
++ CSS
++ JS
+
+### Software
+
+_Toolkit
+
++ VS Code, coding
++ draw.io , flowchart
++ Git, version controlling
++ GitHub, sharing, deploying, and other cool stuff
