@@ -6,6 +6,12 @@ Welcome to the ultimate Tic Tac Toe showdown! Are you ready to test your wits an
 
 ![Game at different breakpoints](images/readme/tic-tac-toe-breakpoints-.png)
 
+## Design
+
+Given that this program is tailored for terminal use, the emphasis was placed on functionality rather than intricate visual design. The game board and player tokens are represented using basic keyboard letters and symbols, with the added ANSI escape code to provide a visually appealing and engaging experience.
+
+![Tic Tac Toe flowchart](images/readme/tic-tac-toe-flowchart.png)
+
 ## How to play
 
 ### Objective
@@ -30,7 +36,6 @@ The objective of Tic Tac Toe is to be the first player to get three of your mark
 4 | 5 | 6
 ---------
 7 | 8 | 9
-
 
 ### Taking Turns
 
@@ -70,5 +75,6 @@ The objective of Tic Tac Toe is to be the first player to get three of your mark
 17. You can try different strategies to outsmart your opponent, but remember that Tic Tac Toe is a game of skill and strategy.
 
 Now you're ready to enjoy a game of Tic Tac Toe! Take turns, plan your moves, and aim to be the first to get three in a row. Good luck and have fun!
+
 
 
