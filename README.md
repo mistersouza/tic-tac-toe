@@ -4,13 +4,13 @@ Welcome to the ultimate Tic Tac Toe showdown! Are you ready to test your wits an
 
 [Play now](images/readme/tic-tac-toe-breakpoints-.png)
 
-![Game at different breakpoints](images/readme/tic-tac-toe-breakpoints-.png)
+![Game at different breakpoints](images/readme/tic-tac-toe_breakpoints-.png)
 
 ## Design
 
 Given that this program is tailored for terminal use, the emphasis was placed on functionality rather than intricate visual design. The game board and player tokens are represented using basic keyboard letters and symbols, with the added ANSI escape code to provide a visually appealing and engaging experience.
 
-![Tic Tac Toe flowchart](images/readme/tic-tac-toe-flowchart.png)
+![Tic Tac Toe flowchart](images/readme/tic-tac-toe_flowchart.png)
 
 ## How to play
 
@@ -31,7 +31,7 @@ The objective of Tic Tac Toe is to be the first player to get three of your mark
 
 4. You'll see a 3x3 grid on the screen, initially empty. Each cell is labeled with a number from 1 to 9, as shown below:
 
-![Tic Tac Toe grid](images/readme/tic-tac-toe-grid.png)
+![Tic Tac Toe grid](images/readme/tic-tac-toe_grid.png)
 
 ### Taking Turns
 
@@ -77,9 +77,13 @@ Now you're ready to enjoy a game of Tic Tac Toe! Take turns, plan your moves, an
 ### Existing features
 
 __Custom layout__ Say hello to our wicked terminal setup and rad background image. It's like we're giving your game an exclusive VIP lounge
-![Tic Tac Toe layout](images/readme/tic-tac-toe-layout.png)
+![Tic Tac Toe layout](images/readme/tic-tac-toe_layout.png)
 
 
 __Interactive Guide__ New to the game? No worries! We've got an interactive guide that'll teach you how to play like a pro, right on your custom background.
-![Tic Tac Toe how to play](images/readme/tic-tac-toe-how.png)
+![Tic Tac Toe how to play](images/readme/tic-tac-toe_how-to-play.png)
 
+__Randomly Smart Bot__ Challenge a bot that makes clever, random moves. It's not just any bot; it's a stylish and smart one.
+
+__Winning Highlight__ When you emerge victorious, we'll make sure your epic moves shine brightly against the custom background.
+![Tic Tac Tow winning moves](images/readme/tic-tac-toe_winning-moves.png)
