@@ -80,3 +80,6 @@ __Custom layout__ Say hello to our wicked terminal setup and rad background imag
 ![Tic Tac Toe layout](images/readme/tic-tac-toe-layout.png)
 
 
+__Interactive Guide__ New to the game? No worries! We've got an interactive guide that'll teach you how to play like a pro, right on your custom background.
+![Tic Tac Toe how to play](images/readme/tic-tac-toe-how.png)
+
