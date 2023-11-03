@@ -94,7 +94,11 @@ __Play Again__ Feel like another round? You can restart the epic showdown with a
 ![Tic Tac Tow play again](images/readme/tic-tac-toe_play-again.png)
 
 ### Future features
+
+Coming up son
+
 __Multiplayer Mode__ Challenge your friends and see who's the ultimate champion.
+
 __AI Bot Opponent__ Test your skills against our cunning AI bot.
 
 ## Data Model
@@ -110,3 +114,30 @@ I've given this project a solid manual run-through, just to make sure everything
 I threw some curveballs too, like tossing in strings when it expected numbers and venturing into out-of-bounds territory. The game handled it like a champ.
 
 To top it off, I gave it a spin on my trusty local terminal and even unleashed it in the wilds of the Code Institute Heroku terminal. It's all good, no hiccups.
+
+### Bugs
+
+We managed to prevent unintended terminal output printed red after handling invalid input by applying the `continue` get_user_next_move definition. This statement allows us to skip the current loop iteration when invalid input is detected, ensuring that only valid inputs are processed and displayed in the terminal, thus improving the user experience.
+
+    ```python
+        def get_user_next_move(board):
+        '''
+        Get user to input next move by typing a number from 1 to 9. 
+        It's not going to let you move to a spot that's already been claimed.
+        '''
+        ## Time to play, superstar! We're in an endless loop until you make a killer move.
+        while True:
+            try: 
+                # Get your move by entering a number from 1 to 9. We'll check if it's the real deal.
+                next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
+                if validate_move(next_move, board):
+                    # If your move checks out, it's showtime. Your 'X' is dropping right here!
+                    move, mark = (next_move, 'X')
+                    board = update_board(board, move, mark)
+                    # Handing you back the updated board.
+                    return board
+            except ValueError:
+                # Oops! If you stumble with non-numeric input, we'll tell you off in red.
+                print(ANSI_RED + f'Oops, that\'s not a valid move. Try again, champ!' + ANSI_RESET)
+                continue
+    ```
