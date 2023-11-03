@@ -125,19 +125,14 @@ We managed to prevent unintended terminal output printed red after handling inva
     Get user to input next move by typing a number from 1 to 9. 
     It's not going to let you move to a spot that's already been claimed.
     '''
-    ## Time to play, superstar! We're in an endless loop until you make a killer move.
     while True:
         try: 
-            # Get your move by entering a number from 1 to 9. We'll check if it's the real deal.
             next_move = int(input("What's your move, superstar? Pick a number from 1 to 9: "))
             if validate_move(next_move, board):
-                # If your move checks out, it's showtime. Your 'X' is dropping right here!
                 move, mark = (next_move, 'X')
                 board = update_board(board, move, mark)
-                # Handing you back the updated board.
                 return board
         except ValueError:
-            # Oops! If you stumble with non-numeric input, we'll tell you off in red.
             print(ANSI_RED + f'Oops, that\'s not a valid move. Try again, champ!' + ANSI_RESET)
             continue
 ```
@@ -184,7 +179,22 @@ Indeed, I've been the lone architect behind the planning, design, and code, but 
 
 ### Goodies 
 + [unsplash](https://unsplash.com/s/photos/splash)
-  + 'Cause it makes everything look oh-so-pretty!
+    + 'Cause it makes everything look oh-so-pretty!
++ Chat GPT
+    + This AI buddy was the brain behind it all. It's been our chit-chat partner throughout.
+```python
+def get_winner_moves(board):
+    '''
+    Snag the game-winning moves!
+    '''
+    winning_moves = []
+    for combination in winning_combinations:
+        if all(board[row][col] == 'X' for row, col in combination):
+            winning_moves.extend(combination)
+        elif all(board[row][col] == 'O' for row, col in combination):
+            winning_moves.extend(combination)  
+    return winning_moves  
+```
 
 ### Inpired by
 
@@ -194,8 +204,8 @@ Indeed, I've been the lone architect behind the planning, design, and code, but 
 ### Thanks
 
 + David Calikes, Code Institute Cohort Facilitator.
-  + Positive and Uplifting. David's Always available and boosts my confidence time we chat.
+    + Positive and Uplifting. David's Always available and boosts my confidence time we chat.
 + Oluwafemi Medale, Code Institute Mentor.
-  + Bugs terminator. He always make times, when there's no time at all.
-+ Chat GPT, Mister know it all.
-  + Documenting King. Not always correct, but frequently inspiring.
+    + Bugs terminator. He always make times, when there's no time at all.
++ Chat GPT, Here comes Mister know it all again.
+    + Documenting King. Not always correct, but frequently inspiring.
