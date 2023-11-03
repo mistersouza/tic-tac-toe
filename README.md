@@ -89,4 +89,7 @@ __Winning Highlight__ When you emerge victorious, we'll make sure your epic move
 ![Tic Tac Tow winning moves](images/readme/tic-tac-toe_winning-moves.png)
 
 __Tie or Draw__ If no one conquers the grid, we'll call it a draw. Tic-Tac-Toe drama at its finest, set against a stylish backdrop.
-![Tic Tac Tow draw](tic-tac-toe/images/readme/tic-tac-toe_draw.png)
+![Tic Tac Tow draw](images/readme/tic-tac-toe_draw.png)
+
+__Play Again__ Feel like another round? You can restart the epic showdown with a single keystroke, all on your sleek custom terminal.
+![Tic Tac Tow play again](images/readme/tic-tac-toe_play-again.png)
