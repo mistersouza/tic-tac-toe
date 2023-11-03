@@ -177,3 +177,25 @@ _Toolkit
 + draw.io , flowchart
 + Git, version controlling
 + GitHub, sharing, deploying, and other cool stuff
+
+## Credits
+
+Indeed, I've been the lone architect behind the planning, design, and code, but I couldn't have pulled it off without some helping hands. And honestly, I wouldn't want it any other way. The collaborative spirit of programming is truly one of the things I cherish the most about this journey.
+
+### Goodies 
++ [unsplash](https://unsplash.com/s/photos/splash)
+  + 'Cause it makes everything look oh-so-pretty!
+
+### Inpired by
+
++ Code Institute's [Love Sandwiches](https://github.com/mistersouza/love-sandwiches.git)
++ [Clever Programmer](https://youtu.be/BHh654_7Cmw?si=G6NMco2kre3hysJX)
+
+### Thanks
+
++ David Calikes, Code Institute Cohort Facilitator.
+  + Positive and Uplifting. David's Always available and boosts my confidence time we chat.
++ Oluwafemi Medale, Code Institute Mentor.
+  + Bugs terminator. He always make times, when there's no time at all.
++ Chat GPT, Mister know it all.
+  + Documenting King. Not always correct, but frequently inspiring.
