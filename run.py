@@ -40,7 +40,7 @@ def how_to_play():
     print("Don't underestimate it; this bot knows how to play the game.")
     print()
 
-    print("The first to conquer three 'X's in a row, column, or diagonal becomes the champion.")
+    print("The first to conquer three 'X's in a row, column, or diagonal is the champion.")
     print("If all cells are claimed, and no one clinches victory, it's a draw.")
 
     print('You can\'t place your "X" where your opponent has already marked an "O,"')
@@ -94,7 +94,8 @@ def get_user_next_move(board):
                 return board
         except ValueError:
             # Oops! If you stumble with non-numeric input, we'll tell you off in red.
-            print(f"{Fore.RED}Oops, that's not a valid move. Try again, champ!{Style.RESET_ALL}")
+            print(ANSI_RED + f'Oops, that\'s not a valid move. Try again, champ!' + ANSI_RESET)
+            continue
 
 def get_bot_next_move(board):
     '''
