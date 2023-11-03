@@ -2,7 +2,7 @@
 
 Welcome to the ultimate Tic Tac Toe showdown! Are you ready to test your wits and strategic prowess? It's time to embark on an epic journey into the world of Xs and Os. You'll face off against a crafty bot, competing to be the first to complete a row, column, or diagonal with your 'X' marks. But beware, the bot won't make victory easy! So, gear up and get ready for an intense battle of wits. Do you have what it takes to outsmart the bot and emerge as the Tic Tac Toe champion? Let's find out!
 
-[Play now](images/readme/tic-tac-toe-breakpoints-.png)
+[Play now](https://ci-tic-tac-toe-a4813875d9de.herokuapp.com/)
 
 ![Game at different breakpoints](images/readme/tic-tac-toe_breakpoints-.png)
 
@@ -144,3 +144,16 @@ We managed to prevent unintended terminal output printed red after handling inva
 ### Ongoing Bug Hunt
 
 Our bug-busting adventure is ever going!
+
+## Deployment
+
+This project was brought to life using Code Institute's mock terminal for Heroku 🚀 
+
+- Here's the playbook:
+    - First, fork or clone this epic repo.
+    - Head over to Heroku and create a brand-new app.
+    - Set the buildpacks like a pro – Python and Node.js, in that order.
+    - Now, link your Heroku app to the repo where the action's happening.
+    - Finally, just tap that 'Deploy' button like a champ! 💥
+
+[Watch your game come to life on Heroku](https://ci-tic-tac-toe-a4813875d9de.herokuapp.com/)
