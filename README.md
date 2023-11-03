@@ -4,6 +4,8 @@ Welcome to the ultimate Tic Tac Toe showdown! Are you ready to test your wits an
 
 [Play now](https://ci-tic-tac-toe-a4813875d9de.herokuapp.com/)
 
+![Game at different breakpoints](images/readme/tic-tac-toe_breakpoints-.png)
+
 ## Contents 📜
 
 [Design](https://github.com/mistersouza/tic-tac-toe#design)
@@ -21,8 +23,6 @@ Welcome to the ultimate Tic Tac Toe showdown! Are you ready to test your wits an
 [Tech](https://github.com/mistersouza/tic-tac-toe#tech-%EF%B8%8F)
 
 [Credits](https://github.com/mistersouza/tic-tac-toe#credits)
-
-![Game at different breakpoints](images/readme/tic-tac-toe_breakpoints-.png)
 
 ## Design
 
