@@ -31,11 +31,7 @@ The objective of Tic Tac Toe is to be the first player to get three of your mark
 
 4. You'll see a 3x3 grid on the screen, initially empty. Each cell is labeled with a number from 1 to 9, as shown below:
 
-1 | 2 | 3
----------
-4 | 5 | 6
----------
-7 | 8 | 9
+![Tic Tac Toe grid](images/readme/tic-tac-toe-grid.png)
 
 ### Taking Turns
 
@@ -76,5 +72,11 @@ The objective of Tic Tac Toe is to be the first player to get three of your mark
 
 Now you're ready to enjoy a game of Tic Tac Toe! Take turns, plan your moves, and aim to be the first to get three in a row. Good luck and have fun!
 
+## Features
+
+### Existing features
+
+__Custom layout__ Say hello to our wicked terminal setup and rad background image. It's like we're giving your game an exclusive VIP lounge
+![Tic Tac Toe layout](images/readme/tic-tac-toe-layout.png)
 
 
