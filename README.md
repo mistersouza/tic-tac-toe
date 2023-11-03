@@ -87,3 +87,6 @@ __Randomly Smart Bot__ Challenge a bot that makes clever, random moves. It's not
 
 __Winning Highlight__ When you emerge victorious, we'll make sure your epic moves shine brightly against the custom background.
 ![Tic Tac Tow winning moves](images/readme/tic-tac-toe_winning-moves.png)
+
+__Tie or Draw__ If no one conquers the grid, we'll call it a draw. Tic-Tac-Toe drama at its finest, set against a stylish backdrop.
+![Tic Tac Tow draw](tic-tac-toe/images/readme/tic-tac-toe_draw.png)
