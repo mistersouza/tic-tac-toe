@@ -22,7 +22,7 @@ def how_to_play():
     '''
     print('Welcome to the ultimate Tic Tac Toe showdown!')
     print()
-    print('Picture this: you\'re about to step onto a 3x3 battlefield, just like the one below.')
+    print('Picture this: you\'re about to step onto a 3x3 grid, just like the one below.')
     print('Each cell is tagged with a number from 1 to 9.')
     print()
     draw_board()
@@ -30,7 +30,7 @@ def how_to_play():
 
     print("Guess what? You're the 'X' player, and your mission is simple:")
     print("get three 'X's in a row, column, or diagonal.")
-    print("To make your move, just type the number of the cell where you want to drop your 'X'.")
+    print("To make your move, type the number of the cell where you want to drop your 'X'.")
     print()
 
     print("But there's a twist – no crossing into 'O' territory, and no numbers outside of 1 to 9 allowed!")
